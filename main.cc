@@ -1,24 +1,8 @@
 #include <iostream>
 #include <math.h>
+#include "./main.h"
 
 using namespace std;
-
-typedef double real;
-
-class three_d {
-public:
-	real x, y, z; // 3d coordinates
-	three_d() { x = y = z = 0; }
-	three_d(real i, real j, real k) { x = i; y = j; z = k; }
-	
-	three_d operator+(three_d op2); // op1 is implied 
-	three_d operator-(three_d op2); // op1 is implied
-	three_d operator*(three_d op2); // op1 is implied
-	three_d operator/(three_d op2); // op1 is implied
-	three_d operator=(three_d op2); // op1 is implied
-	real length_2(); // sqrt(x^2+y^2+z^2)
-	void show();			
-};
 
 // overload the + operator
 three_d three_d::operator+(three_d op2) {
@@ -29,7 +13,7 @@ three_d three_d::operator+(three_d op2) {
 	temp.z = z + op2.z;
 	return temp;
 }
-	
+
 // overload the - operator
 three_d	three_d::operator-(three_d op2) {
 	three_d temp;
@@ -78,28 +62,11 @@ void three_d::show() {
 	cout << "x: " << x << " y: " << y << " z: " << z << endl;
 }	
 
-class DNFractal {
-	public:
-	real multiplicationtable[3][6];
-	DNFractal();
-	DNFractal(real x[][6]);
-	three_d iterate(three_d vector1, three_d vector2);
-	bool is_in_fractal(three_d vector, int iterations, int threshold);
-	
-	
-	private:
-	real f(three_d vector1, real mult[]) {
-		return	mult[0] * vector1.x * vector1.x + mult[1] * vector1.x * vector1.y + 
-				mult[2] * vector1.x * vector1.z + mult[3] * vector1.y * vector1.y +
-				mult[4] * vector1.y * vector1.z + mult[5] * vector1.z * vector1.z;
-	}
-};
-
 bool DNFractal::is_in_fractal(three_d vector, int iterations, int threshold) {
 	three_d vbegin(0, 0, 0);
 	for (int i = 0; i < iterations; i++) {
 		vbegin = iterate(vbegin, vector);
-		if (vbegin.length_2() > 25) 
+		if (vbegin.length_2() > 25)
 			return false;
 	}
 	return true;
@@ -128,32 +95,103 @@ three_d DNFractal::iterate (three_d vector1, three_d vector2) {
 	x0 = f(vector1, multiplicationtable[0]);
 	x1 = f(vector1, multiplicationtable[1]);
 	x2 = f(vector1, multiplicationtable[2]);
-
+	
 	temp = three_d(x0, x1, x2);
 	return temp + vector2;
 }
 
+// This function creates a new item
+item::item() {
+    this->next = NULL;						// New item with two NULL pointers and
+    this->prev = NULL;						// two digits both set to 0 initially
+    this->vector = three_d(0, 0, 0);		// The two pointers may be pointed to another
+    this->iterations = 0;					// item object elsewhere
+}
+
+// This (overloaded) function creates a new item with content
+item::item(three_d vector, int iterations) {// New item with two NULL pointers
+    this->next = NULL;						// These pointers are created during execution of add() 
+    this->prev = NULL;						// when a carry occurs in add(). 
+    this->vector = vector;							// The carry (always 1) is stored in temp
+    this->iterations = iterations;						// and the actual value of THIS item is digit
+}
+
+// Destructor: It removes an item from a list.
+item::~item() {
+    if (this->next)							// If pointer to next item exists (thus not NULL)
+		delete this->next;					// then delete next item
+}
+
+// This function creates a new list
+list::list() {
+    this->begin = NULL;						// Set the pointers to the begin and end
+    this->end = NULL;						// of the list to NULL
+}
+
+// Destructor: This function destroys a list
+list::~list() {
+    if (this->begin)						// If the pointer to begin in THIS list is not NULL
+		delete begin;						// then delete pointer to begin.
+}
+
+// This function adds a new item to the begin of the doublelinked list.
+void list::unshift(item * itemObj) {
+    if (this->begin) {						// If the begin of the list is not NULL
+		this->begin->prev = itemObj;		// point prev to new itemObj
+		itemObj->next = this->begin;		// and next from itemObj to begin.
+    }
+    this->begin = itemObj;					// point begin to new itemObj
+    if (!this->end)							// If end is NULL, then
+		this->end = this->begin;			// end equals begin. (thus empty list)
+}
+
+// This function removes an item from the begin of a doublelinked list.
+item *list::shift() {
+    if (this->begin) {						// If a non-empty list exists,
+		item *dummy = this->begin;			// set a dummy pointer to begin
+		if (this->begin->next) {			// If there exists a next item
+			this->begin = this->begin->next;// point begin to the next item
+			this->begin->prev = NULL;		// and set the pointer prev to NULL
+		} else {							// else we have reached the last element to destroy
+			this->end = NULL;				// and must point both begin and end
+			this->begin = NULL;				// to NULL
+		}
+		delete dummy;						// Delete dummy (eigenlijk item list)
+    }
+    return 0;
+}
+
+// This function adds a new item to the end of a doublelinked list
+void list::push(item * itemObj) {
+    if (this->end) {						// If end of list is not NULL,
+		this->end->next = itemObj;			// point next to new itemObj
+		itemObj->prev = this->end;			// and prev from itemObj to end.
+    }
+    this->end = itemObj;					// point end to new itemObj
+    if (!this->begin)						// If begin is NULL make begin 
+		this->begin = this->end;			// equal to end, (thus a single item list)
+}
 
 int main() {
 	three_d	a(1, 0, 0), b(4, 5, 6), c(0.1,0.2,0.3), d, e, f;
 	
-	DNFractal iets=DNFractal();
+	DNFractal fractal=DNFractal();
 	
-	f = iets.iterate(a, b);
-	cout << iets.is_in_fractal(b, 10, 25) << " is in fract\n";
-	cout << iets.is_in_fractal(c, 10, 25) << " is in fract\n";	
-/*	
-	c = b - a;
-	d = a * b;
-	e = a / b;
-	
-	a.show();
-	b.show();
-	c.show();
-	d.show();
-	e.show();
-	f.show();
-*/	
+	f = fractal.iterate(a, b);
+	cout << fractal.is_in_fractal(b, 10, 25) << " is in fract\n";
+	cout << fractal.is_in_fractal(c, 10, 25) << " is in fract\n";	
+	/*	
+	 c = b - a;
+	 d = a * b;
+	 e = a / b;
+	 
+	 a.show();
+	 b.show();
+	 c.show();
+	 d.show();
+	 e.show();
+	 f.show();
+	 */	
 	real size = 2.0;
 	real step = 0.03;
 	three_d temp;
@@ -163,8 +201,8 @@ int main() {
 		for (real j = -size; j < size; j += step) {
 			for (real k = -size; k < size; k += step) {
 				temp = three_d(i, j, k);
-				if (iets.is_in_fractal(temp, 100, 25)){count++;}
-					//temp.show();
+				if (fractal.is_in_fractal(temp, 100, 25)){count++;}
+				temp.show();
 			}
 		}
 	}
