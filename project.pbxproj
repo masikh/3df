@@ -1,0 +1,292 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E105A733111760E30067BEA9 /* scene1.h in Headers */ = {isa = PBXBuildFile; fileRef = E105A732111760E30067BEA9 /* scene1.h */; };
+		E134243311332764001E50B4 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E134243211332764001E50B4 /* GLUT.framework */; };
+		E134243511332764001E50B4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E134243411332764001E50B4 /* OpenGL.framework */; };
+		E1423092110E4BFE004C11AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E142305C110E4BFE004C11AA /* main.cpp */; };
+		E1423093110E4BFE004C11AA /* main.h in Headers */ = {isa = PBXBuildFile; fileRef = E142305D110E4BFE004C11AA /* main.h */; };
+		E1423096110E4BFE004C11AA /* scene1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1423060110E4BFE004C11AA /* scene1.cpp */; };
+		E1707AAD137ED5E900694C54 /* mandelbulb.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1707AAC137ED5E900694C54 /* mandelbulb.icns */; };
+		E18BE9A711170E250082A3AC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18BE9A611170E250082A3AC /* Cocoa.framework */; };
+		E18BE9A911170E250082A3AC /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18BE9A811170E250082A3AC /* CoreFoundation.framework */; };
+		E18BE9AB11170E250082A3AC /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18BE9AA11170E250082A3AC /* CoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E105A732111760E30067BEA9 /* scene1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene1.h; sourceTree = "<group>"; };
+		E134243211332764001E50B4 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+		E134243411332764001E50B4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		E1400A91137ED8B0004B6E6B /* mandelbulb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mandelbulb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1423032110E4A33004C11AA /* Info-No_Space__Upgraded_.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-No_Space__Upgraded_.plist"; sourceTree = "<group>"; };
+		E142305C110E4BFE004C11AA /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E142305D110E4BFE004C11AA /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		E1423060110E4BFE004C11AA /* scene1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scene1.cpp; sourceTree = "<group>"; };
+		E1707AAC137ED5E900694C54 /* mandelbulb.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = mandelbulb.icns; sourceTree = SOURCE_ROOT; };
+		E18BE9A611170E250082A3AC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		E18BE9A811170E250082A3AC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		E18BE9AA11170E250082A3AC /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E142302B110E4A33004C11AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18BE9A711170E250082A3AC /* Cocoa.framework in Frameworks */,
+				E18BE9A911170E250082A3AC /* CoreFoundation.framework in Frameworks */,
+				E18BE9AB11170E250082A3AC /* CoreServices.framework in Frameworks */,
+				E134243311332764001E50B4 /* GLUT.framework in Frameworks */,
+				E134243511332764001E50B4 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1422FBF110E46AA004C11AA = {
+			isa = PBXGroup;
+			children = (
+				E18BECC51117375F0082A3AC /* Public Utility */,
+				E18BE9A511170DFD0082A3AC /* Frameworks */,
+				E1CE7FB911170716004DF32A /* Source */,
+				E142304E110E4BFD004C11AA /* data */,
+				E1422FD1110E47BF004C11AA /* Products */,
+				E1423032110E4A33004C11AA /* Info-No_Space__Upgraded_.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		E1422FD1110E47BF004C11AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1400A91137ED8B0004B6E6B /* mandelbulb.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E142304E110E4BFD004C11AA /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E1707AAC137ED5E900694C54 /* mandelbulb.icns */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		E18BE9A511170DFD0082A3AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E134243411332764001E50B4 /* OpenGL.framework */,
+				E134243211332764001E50B4 /* GLUT.framework */,
+				E18BE9A611170E250082A3AC /* Cocoa.framework */,
+				E18BE9A811170E250082A3AC /* CoreFoundation.framework */,
+				E18BE9AA11170E250082A3AC /* CoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E18BECC51117375F0082A3AC /* Public Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Public Utility";
+			sourceTree = "<group>";
+		};
+		E1CE7FB911170716004DF32A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E142305D110E4BFE004C11AA /* main.h */,
+				E142305C110E4BFE004C11AA /* main.cpp */,
+				E105A732111760E30067BEA9 /* scene1.h */,
+				E1423060110E4BFE004C11AA /* scene1.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E1423026110E4A33004C11AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1423093110E4BFE004C11AA /* main.h in Headers */,
+				E105A733111760E30067BEA9 /* scene1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E1423025110E4A33004C11AA /* mandelbulb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E142302F110E4A33004C11AA /* Build configuration list for PBXNativeTarget "mandelbulb" */;
+			buildPhases = (
+				E1423026110E4A33004C11AA /* Headers */,
+				E1423028110E4A33004C11AA /* Resources */,
+				E1423029110E4A33004C11AA /* Sources */,
+				E142302B110E4A33004C11AA /* Frameworks */,
+				E142302E110E4A33004C11AA /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mandelbulb;
+			productInstallPath = "$(USER_APPS_DIR)";
+			productName = mandelbulb;
+			productReference = E1400A91137ED8B0004B6E6B /* mandelbulb.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1422FC1110E46AA004C11AA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E1422FC4110E46AA004C11AA /* Build configuration list for PBXProject "mandelbulb" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = E1422FBF110E46AA004C11AA;
+			productRefGroup = E1422FD1110E47BF004C11AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1423025110E4A33004C11AA /* mandelbulb */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1423028110E4A33004C11AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1707AAD137ED5E900694C54 /* mandelbulb.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		E142302E110E4A33004C11AA /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1423029110E4A33004C11AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1423092110E4BFE004C11AA /* main.cpp in Sources */,
+				E1423096110E4BFE004C11AA /* scene1.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E1422FC2110E46AA004C11AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		E1422FC3110E46AA004C11AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		E1423030110E4A33004C11AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(DEVELOPER_DIR)/SDKs/MacOSX10.6.sdk/System/Library/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "Info-No_Space__Upgraded_.plist";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = mandelbulb;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E1423031110E4A33004C11AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(DEVELOPER_DIR)/SDKs/MacOSX10.6.sdk/System/Library/Frameworks\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "Info-No_Space__Upgraded_.plist";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = mandelbulb;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1422FC4110E46AA004C11AA /* Build configuration list for PBXProject "mandelbulb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1422FC2110E46AA004C11AA /* Debug */,
+				E1422FC3110E46AA004C11AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E142302F110E4A33004C11AA /* Build configuration list for PBXNativeTarget "mandelbulb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1423030110E4A33004C11AA /* Debug */,
+				E1423031110E4A33004C11AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1422FC1110E46AA004C11AA /* Project object */;
+}
