@@ -117,8 +117,10 @@ void mainloop() {
 		for (real j = -size; j < size; j += step) {
 			for (real k = -size; k < size; k += step) {
 				temp = three_d(i, j, k);
-				if (fractal.is_in_fractal(temp, 100, 25)){count++;}
-					glVertex3f( temp.x, temp.y, temp.z);			// Move Up One Unit From Center (Top Point)
+				if (fractal.is_in_fractal(temp, 100, 25)){
+                    count++;
+					glVertex3f( temp.x, temp.y, temp.z);
+                }// Move Up One Unit From Center (Top Point)
 			}
 		}
 	}
