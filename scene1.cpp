@@ -74,9 +74,13 @@ bool DNFractal::is_in_fractal(three_d vector, int iterations, int threshold) {
 }
 
 DNFractal::DNFractal(){
+    real tmp[3][6] = {
+        { 0  , 0  ,0,0  ,2, 0  },
+        {-0.8,-1.2,0,0.8,0,-0.8},
+        {-0.6, 1.6,0,0.6,0,-0.6}};
 	for(int i=0; i<3;i++){
 		for(int j=0; j<6; j++){
-			multiplicationtable[i][j]=(real) 0.1 * ((real) i + j + 1);
+			multiplicationtable[i][j]=tmp[i][j];
 		}
 	}
 }
@@ -109,7 +113,7 @@ void mainloop() {
 	f = fractal.iterate(a, b);
 
 	real size = 2.0;
-	real step = 0.03;
+	real step = 0.01;
 	three_d temp;
 	int count = 0;
 	
